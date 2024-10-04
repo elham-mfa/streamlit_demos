@@ -48,9 +48,9 @@ def game_page():
     while current_question < len(questions):
         st.header(f"Question {current_question+1}: {questions[current_question]}")
         col1, col2, col3 = st.columns(3)
-        option1 = col1.radio("", options[current_question][0])
-        option2 = col2.radio("", options[current_question][1])
-        option3 = col3.radio("", options[current_question][2])
+        option1 = col1.radio("", options[current_question][0], key=f"option1_{current_question}")
+        option2 = col2.radio("", options[current_question][1], key=f"option2_{current_question}")
+        option3 = col3.radio("", options[current_question][2], key=f"option3_{current_question}")
 
         if st.button("Submit", key=f"submit_{current_question}"):
             if option1 == answers[current_question]:
