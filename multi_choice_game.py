@@ -43,17 +43,22 @@ def game_page():
     ]
 
     score = 0
-    for i in range(len(questions)):
-        st.header(f"Question {i+1}: {questions[i]}")
+    current_question = 0
+
+    while current_question < len(questions):
+        st.header(f"Question {current_question+1}: {questions[current_question]}")
         col1, col2, col3 = st.columns(3)
-        option1 = col1.radio("", options[i][0])
-        option2 = col2.radio("", options[i][1])
-        option3 = col3.radio("", options[i][2])
-        if option1 == answers[i]:
-            score += 1
-            st.success("Correct!")
-        else:
-            st.error(f"Incorrect. The correct answer is {answers[i]}")
+        option1 = col1.radio("", options[current_question][0])
+        option2 = col2.radio("", options[current_question][1])
+        option3 = col3.radio("", options[current_question][2])
+
+        if st.button("Submit", key=f"submit_{current_question}"):
+            if option1 == answers[current_question]:
+                score += 1
+                st.success("Correct!")
+            else:
+                st.error(f"Incorrect. The correct answer is {answers[current_question]}")
+            current_question += 1
 
     st.header(f"Your final score is {score}/{len(questions)}")
 
