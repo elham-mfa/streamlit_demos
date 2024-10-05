@@ -5,7 +5,7 @@ from arabic_support import support_arabic_text
 
 def run():
     st.set_page_config(
-        page_title="اختبار اللغة العربية",
+        page_title="Arabic Game",
         page_icon="❓",
     )
 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     run()
 
 # Support Arabic text alignment in all components
-    support_arabic_text(all=True)
+support_arabic_text(all=True)
     
 # Custom CSS for the buttons
 st.markdown("""
@@ -58,7 +58,7 @@ def next_question():
     st.session_state.answer_submitted = False
 
 # Title and description
-st.title("Streamlit Quiz App")
+st.title("لعبة أقسام الكلام")
 
 # Progress bar
 progress_bar_value = (st.session_state.current_index + 1) / len(quiz_data)
@@ -67,7 +67,7 @@ st.progress(progress_bar_value)
 
 # Display the question and answer options
 question_item = quiz_data[st.session_state.current_index]
-st.subheader(f"Question {st.session_state.current_index + 1}")
+st.subheader(f"السؤال {st.session_state.current_index + 1}")
 st.title(f"{question_item['sentence']} \n ما هو نوع قسم الكلام في كلمة **{question_item['word']}**")
 
 st.markdown(""" ___""")
@@ -95,11 +95,11 @@ st.markdown(""" ___""")
 # Submission button and response logic
 if st.session_state.answer_submitted:
     if st.session_state.current_index < len(quiz_data) - 1:
-        st.button('Next', on_click=next_question)
+        st.button('التالي', on_click=next_question)
     else:
         st.write(f"Quiz completed! Your score is: {st.session_state.score} / {len(quiz_data) * 10}")
-        if st.button('Restart', on_click=restart_quiz):
+        if st.button('إعادة', on_click=restart_quiz):
             pass
 else:
     if st.session_state.current_index < len(quiz_data):
-        st.button('Submit', on_click=submit_answer)
+        st.button('أَجِب', on_click=submit_answer)
