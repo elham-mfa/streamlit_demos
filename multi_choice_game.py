@@ -62,9 +62,8 @@ st.progress(progress_bar_value)
 
 # Display the question and answer options
 question_item = quiz_data[st.session_state.current_index]
-print(question_item)
 st.subheader(f"Question {st.session_state.current_index + 1}")
-st.title(f"ما هو نوع قسم الكلام في كلمة {question_item['word']}")
+st.title(f"ما هو نوع قسم الكلام في كلمة {question_item['Word']}")
 
 st.markdown(""" ___""")
 
