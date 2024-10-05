@@ -62,7 +62,7 @@ st.title("لعبة أقسام الكلام")
 
 # Progress bar
 progress_bar_value = (st.session_state.current_index + 1) / len(quiz_data)
-st.metric(label="Score", value=f"{st.session_state.score} / {len(quiz_data) * 10}")
+st.metric(label="النتيجة", value=f"{st.session_state.score} / {len(quiz_data) * 10}")
 st.progress(progress_bar_value)
 
 # Display the question and answer options
