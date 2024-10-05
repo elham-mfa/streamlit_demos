@@ -1,0 +1,1 @@
+streamlit-arabic-support-wrapper==1.1
