@@ -8,12 +8,13 @@ def run():
         page_title="اختبار اللغة العربية",
         page_icon="❓",
     )
-    # Support Arabic text alignment in all components
-    support_arabic_text(all=True)
 
 if __name__ == "__main__":
     run()
 
+# Support Arabic text alignment in all components
+    support_arabic_text(all=True)
+    
 # Custom CSS for the buttons
 st.markdown("""
 <style>
