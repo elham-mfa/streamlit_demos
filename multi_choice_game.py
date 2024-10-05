@@ -2,14 +2,14 @@ import streamlit as st
 import json
 from arabic_support import support_arabic_text
 
-# Support Arabic text alignment in all components
-support_arabic_text(all=True)
 
 def run():
     st.set_page_config(
-        page_title="Streamlit quizz app",
+        page_title="اختبار اللغة العربية",
         page_icon="❓",
     )
+    # Support Arabic text alignment in all components
+    support_arabic_text(all=True)
 
 if __name__ == "__main__":
     run()
