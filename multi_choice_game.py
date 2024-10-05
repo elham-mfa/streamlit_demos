@@ -1,5 +1,9 @@
 import streamlit as st
 import json
+from arabic_support import support_arabic_text
+
+# Support Arabic text alignment in all components
+support_arabic_text(all=True)
 
 def run():
     st.set_page_config(
