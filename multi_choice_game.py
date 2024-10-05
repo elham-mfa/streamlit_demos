@@ -14,13 +14,24 @@ if __name__ == "__main__":
 
 # Support Arabic text alignment in all components
 support_arabic_text(all=True)
-    
+
+
 # Custom CSS for the buttons
 st.markdown("""
 <style>
 div.stButton > button:first-child {
     display: block;
     margin: 0 auto;
+body, html {
+    direction: RTL;
+    unicode-bidi: bidi-override;
+    text-align: right;
+}
+p, div, input, label, h1, h2, h3, h4, h5, h6 {
+    direction: RTL;
+    unicode-bidi: bidi-override;
+    text-align: right;
+}
 </style>
 """, unsafe_allow_html=True)
 
